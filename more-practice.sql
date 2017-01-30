@@ -23,7 +23,7 @@ CREATE TABLE awards (
     award_id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     year INTEGER,
-    brand_id VARCHAR(5) NOT NULL
+    brand_id VARCHAR(5)
     );
 
 -- Insert Awards
@@ -38,3 +38,7 @@ AND name = 'Malibu')),
         (Select brand_id from brands where name = 'Subaru')
 AND name = 'Outback')),
 ('Best in Class', 2015, NULL);
+
+-- here is where i realize i set brand_id to NOT NULL, and can't seem to fix it. :(
+-- ALTER TABLE awards ALTER COLUMN brand_id VARCHAR(5) NULL;
+
